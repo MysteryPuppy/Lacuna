@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="405px" height="569px" viewBox="0 0 405 569" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="3.40834379%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#716DFF" offset="0%"></stop>
+            <stop stop-color="#A47DFF" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="169.5" cy="169.5" r="169.5"></circle>
+        <filter x="-14.9%" y="-14.3%" width="129.8%" height="129.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="3" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="13.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="3.40834379%" y1="50%" x2="100%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#716DFF" offset="0%"></stop>
+            <stop stop-color="#A47DFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Lacuna" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(-4.000000, -50.000000)">
+            <g id="Group" transform="translate(37.000000, 81.000000)">
+                <g id="Moon">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                </g>
+                <text id="Title" font-family="PinchikLight, Pinchik" font-size="84" font-weight="300" fill="#FFFFFF">
+                    <tspan x="39.254" y="207">LACUNA</tspan>
+                </text>
+                <path d="M170.5,537.230807 C210.540644,537.230807 243,504.771451 243,464.730807 C243,438.037044 218.833333,396.126775 170.5,339 C122.166667,396.126775 98,438.037044 98,464.730807 C98,504.771451 130.459356,537.230807 170.5,537.230807 Z" id="Oval" fill="url(#linearGradient-4)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

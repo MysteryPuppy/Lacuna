@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lacuna</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+  </head>
+  <body id="change">
+
+    <section id="homescreen">
+      <img class="icon" src="img/icon.svg">
+      <button onclick="toOnboard()" class="homeButton">ENTER</button>
+    </section>
+
+    <script>
+
+    function toOnboard() {
+      document.getElementById("change").innerHTML ="<section id=onboarding><p class=title>Finding your persona</p><div class=textSection>A good name<br><input></input>Your birthday <input></input></div></section> ";
+    }
+
+    </script>
+
+
+  </body>
+</html>

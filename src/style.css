@@ -1,0 +1,75 @@
+
+#onboarding {
+  background-image: linear-gradient(90deg, #716DFF 3%, #A47DFF 100%);
+}
+
+#homescreen {
+  background-color: black;
+}
+
+section {
+  width: 414px;
+  height: 896px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+body {
+  background-color: black;
+}
+
+.icon {
+  position: absolute;
+  top: 81px;
+  left: 37px;
+}
+
+.boardButton {
+  background-color: black;
+}
+
+.homeButton {
+  background-image: linear-gradient(90deg, #716DFF 3%, #A47DFF 100%);
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 56px;
+  font-size: 14px;
+  color: white;
+}
+
+input{
+  height: 52px;
+  background-color: white;
+  border: none;
+}
+
+.icon {
+  position: absolute;
+  top: 81px;
+  left: 37px;
+  width: 339px;
+  height: 538px;
+}
+
+button {
+  border: none;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-radius: 33px;
+  width: 243px;
+  height: 66px;
+  color: white;
+  box-shadow: 0 7px 12px -3px #1C1C1C;
+  position: absolute;
+  top: 767px;
+  left: 86px;
+}
