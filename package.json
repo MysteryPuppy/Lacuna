@@ -47,8 +47,11 @@
     }
   },
   "dependencies": {
+    "ar.js": "^2.0.8",
     "electron-compile": "^6.4.4",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "quagga": "^0.12.1",
+    "webcamjs": "^1.0.26"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",

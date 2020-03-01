@@ -1,15 +1,27 @@
-
 #onboarding {
-  background-image: linear-gradient(90deg, #716DFF 3%, #A47DFF 100%);
+  background-image: linear-gradient(90deg, #716dff 3%, #a47dff 100%);
 }
 
 #homescreen {
   background-color: black;
 }
 
+#menu {
+  background-image: linear-gradient(90deg, #716dff 3%, #a47dff 100%);
+}
+
+.c {
+  z-index: 10;
+  width: 300px;
+  height: 574px;
+  position: absolute;
+  top: 126px;
+  right: 56px;
+}
+
 section {
-  width: 414px;
-  height: 896px;
+  width: 1024px;
+  height: 768px;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -17,12 +29,24 @@ section {
 
 body {
   background-color: black;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+.info {
+  position: absolute;
+  left: 932px;
+  top: 55px;
+  width: 37px;
+  height: 37px;
 }
 
 .icon {
   position: absolute;
-  top: 81px;
-  left: 37px;
+  top: 41px;
+  left: 343px;
+  width: 339px;
+  height: 538px;
 }
 
 .boardButton {
@@ -30,46 +54,253 @@ body {
 }
 
 .homeButton {
-  background-image: linear-gradient(90deg, #716DFF 3%, #A47DFF 100%);
+  background-image: linear-gradient(90deg, #716dff 3%, #a47dff 100%);
 }
 
 .title {
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 56px;
+  top: 64px;
   font-size: 14px;
   color: white;
 }
 
-input{
+input {
   height: 52px;
   background-color: white;
   border: none;
 }
 
-.icon {
+.video-mask {
+  width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.vcontain {
   position: absolute;
-  top: 81px;
-  left: 37px;
-  width: 339px;
-  height: 538px;
+  top: 90px;
+  left: 25px;
 }
 
 button {
   border: none;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   border-radius: 33px;
   width: 243px;
   height: 66px;
   color: white;
-  box-shadow: 0 7px 12px -3px #1C1C1C;
+  box-shadow: 0 7px 12px -3px #1c1c1c;
   position: absolute;
-  top: 767px;
-  left: 86px;
+  top: 637px;
+  left: 391px;
+}
+
+.blackButton {
+  background-color: black;
+}
+
+.textSection {
+  position: absolute;
+  left: 130px;
+  top: 222px;
+  width: 400px;
+  color: white;
+  font-size: 30px;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  width: 0;
+}
+
+.radio-toolbar label {
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: 0;
+  position: absolute;
+  top: 394px;
+  width: 230px;
+  height: 66px;
+  text-align: center;
+  padding-top: 40px;
+  margin-left: -100px;
+  font-weight: bold;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color: #fff;
+  border-color: #fff;
+  color: black;
+}
+
+#radioMystic {
+  left: 130px;
+  width: 230px;
+  height: 66px;
+}
+
+#radioHigher {
+  left: 398px;
+  width: 230px;
+  height: 66px;
+  margin: 10px;
+}
+
+#radioSteel {
+  left: 666px;
+  width: 230px;
+  height: 66px;
+  margin: 10px;
+}
+
+#main {
+  background-image: linear-gradient(90deg, #716dff 3%, #a47dff 100%);
+}
+
+.mainBG {
+  background-image: linear-gradient(180deg, #f9fafc 0%, #f9fafc 100%);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 38px;
+  position: absolute;
+  top: 126px;
+  left: 25px;
+  width: 974px;
+  height: 628px;
+}
+
+.mainT {
+  color: black;
+  position: absolute;
+  left: 72px;
+  top: 63px;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.mainP {
+  color: black;
+  position: absolute;
+  font-size: 16px;
+  color: #333d5f;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.middleT {
+  color: black;
+  position: absolute;
+  left: 398px;
+  top: 63px;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.middleP {
+  color: black;
+  position: absolute;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  left: 398px;
+  top: 125px;
+  width: 177px;
+}
+
+.waves {
+  position: absolute;
+  top: 450px;
+  left: -390px;
+  width: 1994px;
+  height: 295px;
+}
+
+.card1 {
+  padding-top: 30px;
+  background-image: linear-gradient(135deg, #f9b4bd 0%, #9573db 100%);
+  box-shadow: 0 2px 5px 0 rgba(83, 97, 255, 0.5);
+  border-radius: 8px;
+  font-size: 24px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 24px;
+  width: 256px;
+  height: 120px;
+  position: absolute;
+  top: 148px;
+  left: 72px;
+  text-align: center;
+}
+
+.card2 {
+  padding-top: 30px;
+  border-radius: 8px;
+  background-image: linear-gradient(134deg, #44dec5 0%, #4ebcfa 100%);
+  box-shadow: 0 2px 5px 0 rgba(83, 97, 255, 0.5);
+  font-size: 24px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 24px;
+  width: 256px;
+  height: 120px;
+  position: absolute;
+  top: 320px;
+  left: 72px;
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.back {
+  position: absolute;
+  right: 932px;
+  top: 55px;
+}
+
+.menu {
+  position: absolute;
+  left: 982px;
+  top: 55px;
+  height: 15px;
+  width: 15px;
+}
+
+.menuitems {
+  position: absolute;
+  top: 148px;
+  margin: 10px;
+  font-size: 22px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #fff;
+  text-align: center;
+}
+
+.changetxt {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: white;
+  z-index: 100;
 }

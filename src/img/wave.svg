@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="150px" viewBox="0 0 1024 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>BG_Art</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="48.7876408%" x2="100%" y2="51.2123592%" id="linearGradient-1">
+            <stop stop-color="#F9B4BD" offset="0%"></stop>
+            <stop stop-color="#9573DB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-2.54818014%" y1="50.6890301%" x2="98.0826195%" y2="49.3038463%" id="linearGradient-2">
+            <stop stop-color="#716DFF" offset="0%"></stop>
+            <stop stop-color="#A47DFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Lacuna" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main" transform="translate(0.000000, -618.000000)">
+            <g id="BG" transform="translate(-390.000000, -261.000000)">
+                <g id="BG_Art" transform="translate(0.000000, 831.000000)">
+                    <path d="M261.385576,85.2357091 C449.226303,24.1063609 701.312332,106.659228 961.838942,121.340737 C1068.252,127.337454 1255.81425,93.1586495 1524.52567,18.8043232 C1788.4797,109.525655 1935.16538,113.532731 1964.58269,30.8255521 C1994,-51.8816273 2001.35433,31.8431887 1986.64567,282 C533.545184,249.405918 -41.5415145,183.817821 261.385576,85.2357091 Z" id="Path-4" fill="url(#linearGradient-1)"></path>
+                    <path d="M71.6424565,205.292695 C339.869619,117.919154 657.612649,93.4129346 1024.87155,131.774036 C1320.21119,152.775401 1480.90481,126.624307 1506.95241,53.320754 C1533,-19.9827993 1539.5119,54.2226875 1526.4881,275.937214 C288.363842,316.214409 -196.584706,292.666236 71.6424565,205.292695 Z" id="Path-4" fill="url(#linearGradient-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

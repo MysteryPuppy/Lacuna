@@ -1,0 +1,32 @@
+The Tarot:
+
+The Fool: M-, H+, S
+The Magician: M+, H-, S
+The High Priestess: M+, H, S-
+The Empress: M-, H, S+
+The Emperor: M, H-, S+
+The Hierophant: M-, H+, S
+The Lovers: M, H+, S-
+The Chariot: M-, H, S+
+Strength: M-, H, S+
+The Hermit: M+, H, S-
+Wheel of Fortune: M, H+, S-
+Justice: M-, H+, S
+The Hanged Man: M+, H, S-
+Death: M, H-, S+
+Temperance: M, H+, S-
+The Devil: M+, H-, S
+The Tower: M, H-, S+
+The Star: M+, H, S-
+The Moon: M+, H-, S
+The Sun: M-, H, S+
+Judgment: M+, H, S-
+The World: M-, H+, S
+
+
+The Mystic (M), The Higher (H), The Steel (S)
+
+
+The Mystic: - + + - o - o - - + o - + o o + o + + - + -  (6o 8+ 8-)
+The Higher: + - o o - + + o o o + + o - + - - o - o o +  (9o 7+ 6-)
+The Steel:  o o - + + o - + + - - o - + - o + - o + - o  (7o 7+ 8-)

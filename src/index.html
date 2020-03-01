@@ -1,28 +1,383 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Lacuna</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="jsQR.js"></script>
   </head>
-  <body id="change">
 
+  <body id="change">
     <section id="homescreen">
-      <img class="icon" src="img/icon.svg">
-      <button onclick="toOnboard()" class="homeButton">ENTER</button>
+      <img class="icon" src="img/icon.svg" />
+      <button onclick="toHome(); makeCanvas();" class="homeButton">
+        ENTER
+      </button>
     </section>
 
     <script>
+      //vars
+      //Player choices: Mystic, Higher, Steel
+      var choice = "none";
+      var points = 0;
 
-    function toOnboard() {
-      document.getElementById("change").innerHTML ="<section id=onboarding><p class=title>Finding your persona</p><div class=textSection>A good name<br><input></input>Your birthday <input></input></div></section> ";
-    }
+      //Tarot cards
+      //negitive,neutral,positive
+      var Fool = "Fool_MSH";
+      var Magician = "Magician_HSM";
+      var Priestess = "Priestess_SHM";
+      var Empress = "Empress_MHS";
+      var Emperor = "Emperor_HMS";
+      var Hierophant = "Hierophant_MHS";
+      var Lovers = "Lovers_SMH";
+      var Chariot = "Chariot_MHS";
+      var Strength = "Strength_MHS";
+      var Hermit = "Hermit_SHM";
+      var Fortune = "Fortune_SMH";
+      var Justice = "Justice_MSH";
+      var Hanged = "Hanged_SHM";
+      var Death = "Death_HMS";
+      var Temperance = "Temperance_SMH";
+      var Devil = "Devil_HSM";
+      var Tower = "Tower_HMS";
+      var Star = "Star_SHM";
+      var Moon = "Moon_HSM";
+      var Sun = "Sun_MHS";
+      var Judgement = "Judgement_SHM";
+      var World = "World_MSH";
 
+      var Tarot = [
+        Fool,
+        Magician,
+        Priestess,
+        Empress,
+        Emperor,
+        Hierophant,
+        Lovers,
+        Chariot,
+        Strength,
+        Hermit,
+        Fortune,
+        Justice,
+        Hanged,
+        Death,
+        Temperance,
+        Devil,
+        Tower,
+        Star,
+        Moon,
+        Sun,
+        Judgement,
+        World
+      ];
+
+      // Randomizer
+      function getRandomCard() {
+        var num = Math.floor(Math.random() * 23);
+        console.log(Tarot[num]);
+        return Tarot[num];
+      }
+
+      // getStats
+      function getStats(character, card) {
+        var position = 0;
+
+        if (character == "Mystic") {
+          position = card.slice(-3).indexOf("M");
+        } else if (character == "Steel") {
+          position = card.slice(-3).indexOf("S");
+        } else {
+          position = card.slice(-3).indexOf("H");
+        }
+
+        console.log(position);
+
+        if (position == 0) {
+          points = points - 1;
+        } else if (position == 1) {
+          points = points;
+        } else {
+          points = points + 1;
+        }
+
+        console.log(points);
+        return points;
+      }
+
+      // //Testing
+      // var randCard = getRandomCard();
+      // var results = getStats(choice, randCard);
+
+      function toHome() {
+        //<canvas class='c'></canvas>
+        //showCam();
+        document.getElementById("change").innerHTML =
+          "<section id=main><p class=title>Lacuna</p> <img class='menu' onclick='quit()' src='img/cross.svg'><canvas class='c'></canvas><div class='mainBG'><p class='mainT'>Daily Magic</p><div class='card1' onclick='toAR1(); find();'><img class='' src='img/trophey.svg'><br>Solo Draw</div><div class='card2'><img class='' src='img/swords.svg'><br>Duo Draw</div><p class='middleT'>Information</p><p class='middleP'>To draw a card for yourself (a daily horoscope) chose the solo option. To play with someone else, pick the duo option.</p><img class='waves' src='img/wave.svg'></section>";
+      }
+
+      //<div id='my_camera' class="video-mask></div>
+      function toAR1() {
+        document.getElementById("change").innerHTML =
+          "<section id=main style='margin : 0px; overflow: hidden;'><img class='back' src='img/back.svg' onclick='toHome();makeCanvas();'><p class='title'>Lacuna</p><div id='loadingMessage'>Unable to access video stream (please make sure you have a webcam enabled)</div><canvas id='canvas2' hidden></canvas><div id='output' hidden><div id='outputMessage'>No QR code detected.</div><div hidden><b>Data:</b> <span id='outputData'></span></div><div>Character:<span id='character'></span></div></div><div class='changetxt'>Please scan your player card.</div><img class='waves' src='img/wave.svg' style='top:550px';></section>";
+      }
+
+      function toGame(character) {
+        //get random card
+        var randCard = getRandomCard();
+        var results = getStats(character, randCard);
+
+        document.getElementById("change").innerHTML =
+          "<section id=main style='margin : 0px; overflow: hidden;'><img class='back' src='img/back.svg' onclick='toHome();makeCanvas();'><p class='title'>Lacuna</p><div class='results'><p class='yourdraw'><img id='make-image' src='img/Mystic.svg'>you got the hermit</p></div><img class='waves' src='img/wave.svg' style='top:550px';></section>";
+        document.getElementById("make-image").src = "img/" + character + ".svg";
+      }
+
+      function showCam() {
+        const webcamjs = require("webcamjs");
+        webcamjs.set({ width: 974, height: 628 });
+        webcamjs.attach("#my_camera");
+        const cameraEl = document.getElementById("my_camera");
+        const videoEl = document.querySelector("#my_camera video");
+        let isFrozen = false;
+      }
+
+      function quit() {
+        window.close();
+      }
+
+      function makeCanvas() {
+        // Three.js - Load .OBJ and .MTL file - Windmill2
+        // from https://threejsfundamentals.org/threejs/threejs-load-obj-materials-windmill2.html
+        "use strict";
+        function main() {
+          const canvas = document.querySelector(".c");
+          const renderer = new THREE.WebGLRenderer({ canvas: canvas });
+          const fov = 65;
+          const aspect = 2; // the canvas default
+          const near = 0.1;
+          const far = 100;
+          const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+          camera.position.set(0, 10, 20);
+
+          const controls = new THREE.OrbitControls(camera, canvas);
+          controls.target.set(0, 5, 0);
+          controls.update();
+          const scene = new THREE.Scene();
+          scene.background = new THREE.Color("#F9FAFC");
+
+          {
+            const skyColor = 0xffffff; // light blue
+            const groundColor = 0xb97a20; // brownish orange
+            const intensity = 1;
+            const light = new THREE.HemisphereLight(
+              skyColor,
+              groundColor,
+              intensity
+            );
+            scene.add(light);
+          }
+
+          {
+            const color = 0xffffff;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(5, 10, 2);
+            scene.add(light);
+            scene.add(light.target);
+          }
+
+          function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
+            const halfSizeToFitOnScreen = sizeToFitOnScreen * 0.5;
+            const halfFovY = THREE.Math.degToRad(camera.fov * 0.5);
+            const distance = halfSizeToFitOnScreen / Math.tan(halfFovY);
+            // compute a unit vector that points in the direction the camera is now
+            // in the xz plane from the center of the box
+            const direction = new THREE.Vector3()
+              .subVectors(camera.position, boxCenter)
+              .multiply(new THREE.Vector3(1, 0, 1))
+              .normalize();
+
+            // move the camera to a position distance units way from the center
+            // in whatever direction the camera was from the center already
+            camera.position.copy(
+              direction.multiplyScalar(distance).add(boxCenter)
+            );
+
+            // pick some near and far values for the frustum that
+            // will contain the box.
+            camera.near = boxSize / 100;
+            camera.far = boxSize * 100;
+
+            camera.updateProjectionMatrix();
+
+            // point the camera to look at the center of the box
+            camera.lookAt(boxCenter.x, boxCenter.y, boxCenter.z);
+          }
+
+          {
+            const objLoader = new THREE.OBJLoader2();
+            objLoader.loadMtl("3D/Human/witch/wat.mtl", null, materials => {
+              objLoader.setMaterials(materials);
+              objLoader.load("3D/Human/witch/wat.obj", event => {
+                const root = event.detail.loaderRootNode;
+                scene.add(root);
+
+                // compute the box that contains all the stuff
+                const box = new THREE.Box3().setFromObject(root);
+                const boxSize = box.getSize(new THREE.Vector3()).length();
+                const boxCenter = box.getCenter(new THREE.Vector3());
+
+                // set the camera to frame the box
+                frameArea(boxSize * 1.2, boxSize, boxCenter, camera);
+
+                // update the Trackball controls to handle the new size
+                controls.maxDistance = boxSize;
+                controls.minDistance = boxSize;
+                controls.target.copy(boxCenter);
+                controls.update();
+              });
+            });
+          }
+
+          function resizeRendererToDisplaySize(renderer) {
+            const canvas = renderer.domElement;
+            const width = canvas.clientWidth;
+            const height = canvas.clientHeight;
+            const needResize =
+              canvas.width !== width || canvas.height !== height;
+            if (needResize) {
+              renderer.setSize(width, height, false);
+            }
+            return needResize;
+          }
+
+          function render() {
+            if (resizeRendererToDisplaySize(renderer)) {
+              const canvas = renderer.domElement;
+              camera.aspect = canvas.clientWidth / canvas.clientHeight;
+              camera.updateProjectionMatrix();
+            }
+
+            renderer.render(scene, camera);
+
+            requestAnimationFrame(render);
+          }
+
+          requestAnimationFrame(render);
+        }
+
+        main();
+      }
+
+      function find() {
+        //find character
+        var video = document.createElement("video");
+        var canvasElement = document.getElementById("canvas2");
+        var canvas2 = canvasElement.getContext("2d");
+        var loadingMessage = document.getElementById("loadingMessage");
+        var outputContainer = document.getElementById("output");
+        var outputMessage = document.getElementById("outputMessage");
+        var outputData = document.getElementById("outputData");
+        var userChoice = document.getElementById("character");
+
+        function drawLine(begin, end, color) {
+          canvas2.beginPath();
+          canvas2.moveTo(begin.x, begin.y);
+          canvas2.lineTo(end.x, end.y);
+          canvas2.lineWidth = 4;
+          canvas2.strokeStyle = color;
+          canvas2.stroke();
+        }
+
+        // Use facingMode: environment to attemt to get the front camera on phones
+        navigator.mediaDevices
+          .getUserMedia({ video: { facingMode: "environment" } })
+          .then(function(stream) {
+            video.srcObject = stream;
+            video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+            video.play();
+            requestAnimationFrame(tick);
+          });
+
+        function tick() {
+          loadingMessage.innerText = "Loading video.";
+          if (video.readyState === video.HAVE_ENOUGH_DATA) {
+            loadingMessage.hidden = true;
+            canvasElement.hidden = false;
+            outputContainer.hidden = false;
+
+            canvasElement.height = video.videoHeight;
+            canvasElement.width = video.videoWidth;
+            canvas2.drawImage(
+              video,
+              0,
+              0,
+              canvasElement.width,
+              canvasElement.height
+            );
+            var imageData = canvas2.getImageData(
+              0,
+              0,
+              canvasElement.width,
+              canvasElement.height
+            );
+            var code = jsQR(imageData.data, imageData.width, imageData.height, {
+              inversionAttempts: "dontInvert"
+            });
+            if (code) {
+              drawLine(
+                code.location.topLeftCorner,
+                code.location.topRightCorner,
+                "#FF3B58"
+              );
+              drawLine(
+                code.location.topRightCorner,
+                code.location.bottomRightCorner,
+                "#FF3B58"
+              );
+              drawLine(
+                code.location.bottomRightCorner,
+                code.location.bottomLeftCorner,
+                "#FF3B58"
+              );
+              drawLine(
+                code.location.bottomLeftCorner,
+                code.location.topLeftCorner,
+                "#FF3B58"
+              );
+              outputMessage.hidden = true;
+              outputData.parentElement.hidden = false;
+              outputData.innerText = code.data;
+              console.log(outputData.innerText);
+              userChoice.innerText = code.data;
+              console.log(userChoice.innerText);
+              if (userChoice.innerText != "") {
+                console.log(userChoice.innerText);
+                console.log("Got character");
+                toGame(userChoice.innerText);
+              }
+            } else {
+              outputMessage.hidden = false;
+              outputData.parentElement.hidden = true;
+            }
+          }
+          requestAnimationFrame(tick);
+        }
+      }
     </script>
-
-
   </body>
+
+  <!--Extra scropts-->
+  <script src="https://threejsfundamentals.org/threejs/resources/threejs/r103/three.min.js"></script>
+  <script src="https://threejsfundamentals.org/threejs/resources/threejs/r103/js/controls/OrbitControls.js"></script>
+  <script src="https://threejsfundamentals.org/threejs/resources/threejs/r103/js/loaders/LoaderSupport.js"></script>
+  <script src="https://threejsfundamentals.org/threejs/resources/threejs/r103/js/loaders/OBJLoader2.js"></script>
+  <script src="https://threejsfundamentals.org/threejs/resources/threejs/r103/js/loaders/MTLLoader.js"></script>
 </html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="185px" height="264px" viewBox="0 0 185 264" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63 (92445) - https://sketch.com -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Lacuna" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-39.000000, -40.000000)">
+            <g id="Group-9" transform="translate(41.000000, 42.000000)">
+                <g id="Group-4">
+                    <rect id="Rectangle" stroke="#000000" stroke-width="4" fill="#FFFFFF" x="0" y="0" width="181" height="260"></rect>
+                    <g id="Group-6" transform="translate(22.000000, 18.000000)">
+                        <g id="Group-3" fill="#000000">
+                            <g id="Group">
+                                <g id="Group-2">
+                                    <g id="Moon">
+                                        <circle id="Oval" cx="63.5" cy="63.5" r="63.5"></circle>
+                                    </g>
+                                </g>
+                            </g>
+                            <polygon id="Star" points="61 176.5 38.0763752 188.551663 42.4543979 163.025831 23.9087959 144.948337 49.5381876 141.224169 61 118 72.4618124 141.224169 98.0912041 144.948337 79.5456021 163.025831 83.9236248 188.551663 64.8073825 178.501659"></polygon>
+                        </g>
+                        <circle id="Oval" fill="#FFFFFF" cx="93.5" cy="43.5" r="43.5"></circle>
+                    </g>
+                </g>
+                <text id="MYSTIC" font-family="NotoSansCJKjp-Bold, Noto Sans CJK JP" font-size="24" font-weight="bold" fill="#000000">
+                    <tspan x="42.948" y="240">MYSTIC</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

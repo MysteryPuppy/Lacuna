@@ -12,8 +12,8 @@ let mainWindow;
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 414,
-    height: 896,
+    width: 1024,
+    height: 768,
     frame: false,
   });
 
@@ -22,7 +22,7 @@ const createWindow = () => {
   mainWindow.setResizable(false);
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
