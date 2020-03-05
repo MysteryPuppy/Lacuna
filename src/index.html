@@ -29,6 +29,8 @@
       var randCard2;
       var results;
       var results2;
+      var card1;
+      var card2;
 
       //Tarot cards
       //negitive,neutral,positive
@@ -141,13 +143,19 @@
 
       function toDuoGame(character, character2) {
         //get random card
+        console.log("THIS SI S  HCA RACTER" + character);
+        console.log(character2);
+        card1 = character;
+        card2 = character2;
+        results = 0;
+        results2 = 0;
         randCard = getRandomCard();
         randCard2 = getRandomCard();
         results = getStats(character, randCard);
         results2 = getStats(character2, randCard2);
 
         document.getElementById("change").innerHTML =
-          "<section id=main class=second style='margin : 0px; overflow: hidden;'><img class='back' src='img/back.svg' onclick='toHome(); clear();'><p class='title'>Lacuna</p><div onclick='animatedraw2();'class='results'><img id='make-image' src='img/Mystic.svg'><p id='tarotname'></p><br><img id='make-image2' src='img/Mystic.svg'><p id='tarotname2'></p><br></div><p id='yourdraw'>Click to draw your tarot cards.</p><p id='stats'></p><img class='waves' src='img/wave.svg' style='top:550px';></section>";
+          "<section id=main class=second style='margin : 0px; overflow: hidden;'><img class='back' src='img/back.svg' onclick='toHome(); clear();'><p class='title'>Lacuna</p><div onclick='animatedraw2();'class='results'><img id='make-image' src='img/Mystic.svg'><p id='tarotname'></p><br><img id='make-image2' src='img/Mystic.svg'><p id='tarotname2'></p><br></div><p id='yourdraw'>Click to draw your tarot cards.</p><p id='stats'></p><div id='again'></div><img class='waves' src='img/wave.svg' style='top:550px';></section>";
         document.getElementById("make-image").src = "img/" + character + ".svg";
         document.getElementById("make-image2").src =
           "img/" + character2 + ".svg";
@@ -391,6 +399,8 @@
         } else {
           document.getElementById("yourdraw").innerHTML = "Player 2 wins";
         }
+        document.getElementById("again").innerHTML =
+          "<div onclick='setTimeout(toDuoGame(card1, card2), 3000);' id='againbutton'>Play Again<div>";
       }
 
       function showCam() {

@@ -405,3 +405,17 @@ button {
   border: 2px dashed #44dec5;
   z-index: 100;
 }
+
+#againbutton {
+  background-color: #000000; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position: absolute; 
+  right: 10%; 
+  top: 64px;
+}
