@@ -10,13 +10,13 @@
   background-image: linear-gradient(90deg, #716dff 3%, #a47dff 100%);
 }
 
-.c {
+#girl {
   z-index: 10;
-  width: 300px;
-  height: 574px;
+  height: 524px;
   position: absolute;
-  top: 126px;
+  top: 146px;
   right: 56px;
+  pointer-events: none;
 }
 
 section {
@@ -166,12 +166,38 @@ button {
 }
 
 #main {
-  background-image: linear-gradient(90deg, #716dff 3%, #a47dff 100%);
+  background: linear-gradient(256deg, #716dff, #a47dff, #f9b4bd);
+  background-size: 100% 100%;
+
+  -webkit-animation: AnimationName 18s ease infinite;
+  animation: AnimationName 18s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 51%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 51%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
 .mainBG {
-  background-image: linear-gradient(180deg, #f9fafc 0%, #f9fafc 100%);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(180deg, #fff 0%, #fff 100%);
   border-radius: 38px;
   position: absolute;
   top: 126px;
@@ -302,5 +328,80 @@ button {
   transform: translate(-50%, -50%);
   font-size: 14px;
   color: white;
+  z-index: 100;
+}
+
+.results {
+  position: absolute;
+  left: 42%;
+  top: 200px;
+}
+
+#tarotname {
+  position: absolute;
+  left: 15%;
+  font-family: NotoSansCJKjp-Bold;
+  font-size: 24px;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+  top: 195px;
+  z-index: 100;
+}
+
+#yourdraw {
+  position: absolute;
+  left: 5%;
+}
+
+.emphasis {
+  font-weight: bold;
+  color: white;
+}
+
+.second .results {
+  position: absolute;
+  left: 42%;
+  top: 100px;
+}
+
+.second #make-image2 {
+  position: absolute;
+  top: 300px;
+}
+
+.second #tarotname2 {
+  position: absolute;
+  font-family: NotoSansCJKjp-Bold;
+  font-size: 24px;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+  top: 500px;
+  z-index: 100;
+  left: 15%;
+  text-align: center;
+}
+
+.second #yourdraw {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: white;
+  z-index: 100;
+}
+
+.cardoutline {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 185px;
+  height: 264px;
+  border: 2px dashed #44dec5;
   z-index: 100;
 }
