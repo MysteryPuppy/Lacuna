@@ -10,6 +10,24 @@
       rel="stylesheet"
     />
     <script src="jsQR.js"></script>
+    <script id="worker" type="javascript/worker">
+			// https://gist.github.com/jfairbank/8d36e4bde9c16dc0bac7
+			function fibonacci(n) {
+				if (n < 2) {
+					return 1;
+				}else {
+					return fibonacci(n - 2) + fibonacci(n - 1);
+				}
+			}
+			onmessage = (e) => {
+				const num = e.data;
+				console.log(`Starting calculation for ${num}`);
+				const result = fibonacci(num);
+				console.log(`Finished calculation for ${num}`);
+				postMessage(result);
+			};
+
+		</script>
   </head>
 
   <body id="change">
@@ -517,6 +535,38 @@
         results = 0;
         randCard2 = "";
         results2 = 0;
+      }
+
+      function parallize(){
+        const calculateFibonacci = (num) => {
+				return new Promise((resolve, reject) => {
+					const code = URL.createObjectURL(new Blob([
+						document.getElementById("worker").textContent
+					]));
+
+					const worker = new Worker(code);
+					worker.onerror = (e) => {
+						worker.terminate();
+						URL.revokeObjectURL(code);
+						reject(e);
+					};
+					worker.onmessage = (e) => {
+						worker.terminate();
+						URL.revokeObjectURL(code);
+						resolve(e.data);
+					}
+					worker.postMessage(num);
+				});
+			};
+			calc = () => {
+				for (let i = 1; i <= 4; i++) {
+					const e = document.getElementById("result" + i);
+					e.value = "Calculating...";
+					calculateFibonacci(40 + i).then((res) => {
+						e.value = res;
+					});
+				}
+			};
       }
     </script>
   </body>
