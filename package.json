@@ -50,6 +50,7 @@
     "ar.js": "^2.0.8",
     "electron-compile": "^6.4.4",
     "electron-squirrel-startup": "^1.0.0",
+    "paralleljs": "^0.2.1",
     "quagga": "^0.12.1",
     "webcamjs": "^1.0.26"
   },
