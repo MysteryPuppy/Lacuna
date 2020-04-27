@@ -86,7 +86,7 @@
       // Randomizer
       function getRandomCard() {
         var num = Math.floor(Math.random() * 23);
-        console.log(Tarot[num]);
+        console.log("Tarot:" + Tarot[num]);
         return Tarot[num];
       }
 
@@ -549,13 +549,9 @@
             var secondPlayer = par["data"][1];
             var dateResult = par["data"][2];
             var finalResult = 0;
-
-            console.log(firstPlayer, secondPlayer);
-
             if (firstPlayer != secondPlayer) {
               var firstPlayer1 = Math.abs(firstPlayer - dateResult);
               var secondPlayer1 = Math.abs(secondPlayer - dateResult);
-              console.log("First, second:" + firstPlayer1, secondPlayer1);
               if (firstPlayer1 < secondPlayer1) {
                 return 1;
               }
