@@ -134,6 +134,7 @@ function toDuoGame(character, character2) {
 
 function findTwo() {
   //find character
+  //structure based off of jsQR template https://github.com/cozmo/jsQR/blob/master/docs/index.html
   var video = document.createElement("video");
   var canvasElement = document.getElementById("canvas2");
   var canvas2 = canvasElement.getContext("2d");
