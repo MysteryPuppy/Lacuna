@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Lacuna</title>
-
     <link rel="stylesheet" href="style.css" />
+    <!--Tries to get google font-->
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
       rel="stylesheet"
@@ -13,6 +13,7 @@
     <script src="jsQR.js"></script>
   </head>
 
+  <!--Onboarding screen, the one that starts it all-->
   <body id="change">
     <section id="homescreen">
       <img class="icon" src="img/icon.svg" />
@@ -22,9 +23,7 @@
     </section>
 
     <script>
-      //vars
-      //Player choices: Mystic, Higher, Steel
-      var choice = "none";
+      //global vars
       var points = 0;
       var randCard;
       var randCard2;
@@ -101,7 +100,6 @@
         } else {
           position = card.slice(-3).indexOf("H");
         }
-
         console.log("Position: " + position);
 
         if (position == 0) {
@@ -111,7 +109,6 @@
         } else {
           points = points + 1;
         }
-
         console.log("Points: " + points);
         return points;
       }
@@ -130,7 +127,6 @@
         //get random card
         randCard = getRandomCard();
         results = getStats(character, randCard);
-
         document.getElementById("change").innerHTML =
           "<section id=main style='margin : 0px; overflow: hidden;'><img class='back' src='img/back.svg' onclick='toHome(); clear();'><p class='title'>Lacuna</p><div class='results'><img onclick='animatedraw();' id='make-image' src='img/Mystic.svg'><p id='tarotname'></p><br><p id='yourdraw'>Click to draw a tarot card</p></div><img class='waves' src='img/wave.svg' style='top:550px';></section>";
         document.getElementById("make-image").src = "img/" + character + ".svg";
@@ -181,13 +177,12 @@
           canvas2.strokeStyle = color;
           canvas2.stroke();
         }
-
-        // Use facingMode: environment to attemt to get the front camera on phones
+        //Basic QR code
         navigator.mediaDevices
           .getUserMedia({ video: { facingMode: "environment" } })
           .then(function (stream) {
             video.srcObject = stream;
-            video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+            video.setAttribute("playsinline", true);
             video.play();
             requestAnimationFrame(tick);
           });
@@ -198,7 +193,6 @@
             loadingMessage.hidden = true;
             canvasElement.hidden = false;
             outputContainer.hidden = false;
-
             canvasElement.height = video.videoHeight;
             canvasElement.width = video.videoWidth;
             canvas2.drawImage(
@@ -277,13 +271,11 @@
           canvas2.strokeStyle = color;
           canvas2.stroke();
         }
-
-        // Use facingMode: environment to attemt to get the front camera on phones
         navigator.mediaDevices
           .getUserMedia({ video: { facingMode: "environment" } })
           .then(function (stream) {
             video.srcObject = stream;
-            video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+            video.setAttribute("playsinline", true);
             video.play();
             requestAnimationFrame(tick);
           });
