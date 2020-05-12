@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
       rel="stylesheet"
     />
-    <!--importing libraries--> 
+    <!--importing libraries-->
     <script src="jsQR.js"></script>
   </head>
 
@@ -220,23 +220,19 @@
             if (code) {
               drawLine(
                 code.location.topLeftCorner,
-                code.location.topRightCorner,
-                "#FF3B58"
+                code.location.topRightCorner
               );
               drawLine(
                 code.location.topRightCorner,
-                code.location.bottomRightCorner,
-                "#FF3B58"
+                code.location.bottomRightCorner
               );
               drawLine(
                 code.location.bottomRightCorner,
-                code.location.bottomLeftCorner,
-                "#FF3B58"
+                code.location.bottomLeftCorner
               );
               drawLine(
                 code.location.bottomLeftCorner,
-                code.location.topLeftCorner,
-                "#FF3B58"
+                code.location.topLeftCorner
               );
               outputMessage.hidden = true;
               outputData.parentElement.hidden = false;
@@ -298,7 +294,6 @@
             loadingMessage.hidden = true;
             canvasElement.hidden = false;
             outputContainer.hidden = false;
-
             canvasElement.height = video.videoHeight;
             canvasElement.width = video.videoWidth;
             canvas2.drawImage(
@@ -320,23 +315,19 @@
             if (code) {
               drawLine(
                 code.location.topLeftCorner,
-                code.location.topRightCorner,
-                "#FF3B58"
+                code.location.topRightCorner
               );
               drawLine(
                 code.location.topRightCorner,
-                code.location.bottomRightCorner,
-                "#FF3B58"
+                code.location.bottomRightCorner
               );
               drawLine(
                 code.location.bottomRightCorner,
-                code.location.bottomLeftCorner,
-                "#FF3B58"
+                code.location.bottomLeftCorner
               );
               drawLine(
                 code.location.bottomLeftCorner,
-                code.location.topLeftCorner,
-                "#FF3B58"
+                code.location.topLeftCorner
               );
               outputMessage.hidden = true;
               outputData.parentElement.hidden = false;
