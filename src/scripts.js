@@ -272,6 +272,7 @@ function findSecondPlayer() {
         secondChoice.innerText = code.data;
         randCard2 = secondChoice.innerText;
         if (
+          //make sure the card is different 
           secondChoice.innerText != "" &&
           secondChoice.innerText != randCard
         ) {
